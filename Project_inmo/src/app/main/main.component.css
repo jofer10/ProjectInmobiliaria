@@ -1,0 +1,82 @@
+.header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .p-input-icon-left {
+    position: relative;
+  }
+  
+  .p-input-icon-left .pi {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .p-input-icon-left .pi-search {
+    left: 10px;
+  }
+  
+  .p-input-icon-left .pi-times {
+    right: 10px;
+  }
+  
+  input[pInputText] {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  
+  .report {
+    font-size: 25px;
+    color: orangered;
+  }
+
+  .card {
+    padding: 2rem;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .custom-flex {
+    display: flex;
+    align-items: center;
+    gap: 2rem; /* Ajusta el espacio entre los elementos según sea necesario */
+    flex-wrap: nowrap; /* Evita que los elementos se apilen */
+  }
+  
+  .date-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f8f9fa;
+    border-radius: 20px; /* Ajustar el borde para que no sea tan ovalado */
+    padding: 0.5rem 1rem; /* Ajustar el padding para reducir la altura */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .date-container label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  
+  p-calendar {
+    width: 200px; /* Ajustar el ancho para que sea más amplio */
+  }
+  
+  .ui-inputtext {
+    border: none;
+    text-align: center;
+  }
+  
+  .w-8rem {
+    width: 8rem;
+  }
+  
+  @media (min-width: 640px) {
+    .sm\:w-auto {
+      width: auto;
+    }
+  }
+  

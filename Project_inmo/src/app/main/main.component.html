@@ -1,0 +1,50 @@
+<p-toolbar class="custom-toolbar">
+    <div class="p-toolbar-group-left">
+      <i class="pi pi-bars p-toolbar-separator" style="margin-right: 10px;"></i>
+      <span class="p-toolbar-separator"></span>
+      <span class="title report">Reporte</span>
+    </div>
+</p-toolbar>
+
+<div class="card">
+    <p-menubar>
+      <ng-template pTemplate="start">
+        <div class="flex align-items-center gap-2 custom-flex">
+          <input type="text" pInputText placeholder="Search" class="w-8rem sm:w-auto" [(ngModel)]="buscarProyecto" name="inputBuscar" />
+          <div class="date-container">
+            <label>Fecha Inicio</label>
+            <p-calendar [(ngModel)]="startDate" dateFormat="dd/mm/yy" [showIcon]="true" name="startDate"></p-calendar>
+          </div>
+          <div class="date-container">
+            <label>Fecha Fin</label>
+            <p-calendar [(ngModel)]="endDate" dateFormat="dd/mm/yy" [showIcon]="true" name="endDate"></p-calendar>
+          </div>
+          <p-button label="Buscar" (click)="search()"></p-button>
+        </div>
+      </ng-template>
+    </p-menubar>
+  </div><br>
+
+<div class="card">
+    <p-table [value]="asociados" [tableStyle]="{ 'min-width': '50rem' }">
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Cliente</th>
+                <th>Proyecto</th>
+                <th>Monto Total</th>
+                <th>Monto Parcial</th>
+                <th>Acción</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-product let-i="rowIndex">
+            <tr>
+                <td>{{ product.nombres }}</td>
+                <td>{{ product.name_pry }}</td>
+                <td>{{ product.monto_total | currency:'S/ ':'symbol' }}</td>
+                <td>{{ product.monto_cuota | currency:'S/ ':'symbol' }}</td>
+                <td><p-button [routerLink]="['/main/detail',i]" label="Detalle"/></td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>
+<router-outlet></router-outlet>

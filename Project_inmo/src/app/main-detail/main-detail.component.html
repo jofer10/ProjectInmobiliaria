@@ -1,0 +1,34 @@
+<p-toolbar class="custom-toolbar">
+    <div class="p-toolbar-group-left">
+      <i class="pi pi-bars p-toolbar-separator" style="margin-right: 10px;"></i>
+      <span class="p-toolbar-separator"></span>
+      <p-button label="Volver" [routerLink]="['/main']"/>
+    </div>
+</p-toolbar>
+
+<p-toolbar class="custom-toolbar">
+    <div class="p-toolbar-group-left">
+      <i class="pi pi-bars p-toolbar-separator" style="margin-right: 10px;"></i>
+      <span class="p-toolbar-separator"></span>
+      <span class="title report">Detalle Asociado</span>
+    </div>
+</p-toolbar>
+
+<div class="card">
+    <p-table [value]="asocDet" [tableStyle]="{ 'min-width': '50rem' }">
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Cuota</th>
+                <th>Fecha de pago</th>
+                <th>Monto Cuota</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-asoc let-i="rowIndex">
+            <tr>
+                <td>{{ "CUOTA "+(i+1) }}</td>
+                <td>{{ asoc.fec_pago }}</td>
+                <td>{{ asoc.monto_cuota | currency:'S/ ':'symbol' }}</td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>
